@@ -15,9 +15,16 @@ export default class App extends React.Component {
   }
 
   addTodo = (name) =>{
+    const newTodo = {
+      id: getId(),
+      name:name,
+      completed: false,
+    }
     this.setState({
       ...this.state,
-      todos: this.state.todos.concat({id:getId(), completed:false, name})
+      //todos: this.state.todos.concat({id:getId(), completed:false, name})
+
+      todos: [...this.state.todos, newTodo]
     })
   }
 
