@@ -3,9 +3,9 @@ import React from 'react'
 export default class Todo extends React.Component {
   render() {
     const {id, name, completed} = this.props.todo
-
+    const {toggleCompleted} = this.props
     return (
-      <div>
+      <div onClick={() =>toggleCompleted(id)}>
         {name} {completed && ' ✅'}
       </div>
     )
